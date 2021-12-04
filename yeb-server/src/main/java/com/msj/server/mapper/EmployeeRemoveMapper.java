@@ -1,7 +1,7 @@
 package com.msj.server.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.msj.pojo.EmployeeRemove;
+import com.msj.server.pojo.EmployeeRemove;
 
 /**
  * <p>

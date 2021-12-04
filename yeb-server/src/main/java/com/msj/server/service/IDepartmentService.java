@@ -1,7 +1,7 @@
 package com.msj.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.msj.pojo.Department;
+import com.msj.server.pojo.Department;
 
 /**
  * <p>

@@ -1,7 +1,7 @@
 package com.msj.server.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.msj.pojo.MenuRole;
+import com.msj.server.pojo.MenuRole;
 
 /**
  * <p>
