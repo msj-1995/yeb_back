@@ -24,4 +24,10 @@ public class LoginController {
     public RespBean login(AdminLoginParam adminLoginParam, HttpRequest request) {
         return adminService.login(adminLoginParam.getUsername(), adminLoginParam.getPassword(), request);
     }
+
+    @ApiOperation(value = "退出登录")
+    @PostMapping("/logout")
+    public RespBean logout() {
+        return RespBean.success("注销成功");
+    }
 }

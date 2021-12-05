@@ -21,7 +21,11 @@ public class RespBean {
      * @return
      */
     public static RespBean success(String message, Object obj) {
-        return new RespBean(20, message, obj);
+        return new RespBean(200, message, obj);
+    }
+
+    public static RespBean success(String message) {
+        return new RespBean(200, message, null);
     }
 
     /**
