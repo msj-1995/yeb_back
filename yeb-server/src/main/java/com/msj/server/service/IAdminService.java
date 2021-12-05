@@ -2,6 +2,8 @@ package com.msj.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.msj.server.pojo.Admin;
+import com.msj.server.pojo.RespBean;
+import org.springframework.http.HttpRequest;
 
 /**
  * <p>
@@ -13,4 +15,12 @@ import com.msj.server.pojo.Admin;
  */
 public interface IAdminService extends IService<Admin> {
 
+    /**
+     * 登录之后返回token
+     * @param username
+     * @param password
+     * @param request
+     * @return
+     */
+    RespBean login(String username, String password, HttpRequest request);
 }
