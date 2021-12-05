@@ -1,5 +1,6 @@
 package com.msj.server.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.msj.server.config.security.JwtTokenUtil;
 import com.msj.server.mapper.AdminMapper;
@@ -38,6 +39,8 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     // 拿到token的头部信息
     @Value("${jwt.tokenHead}")
     private String tokenHead;
+    @Autowired
+    private AdminMapper adminMapper;
 
     /**
      * 登录之后返回token
@@ -67,5 +70,16 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         // 把token的头部信息也返回回去
         tokenMap.put("tokenHead", tokenHead);
         return RespBean.success("登录成功", tokenMap);
+    }
+
+
+    /**
+     * 根据用户名获取用户信息
+     * @param username
+     * @return
+     */
+    @Override
+    public Admin getAdminByUserName(String username) {
+        return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username", username).eq("enabled", true));
     }
 }
