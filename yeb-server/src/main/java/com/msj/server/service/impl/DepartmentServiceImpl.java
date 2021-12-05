@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.Department;
-import com.msj.mapper.DepartmentMapper;
-import com.msj.service.IDepartmentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.DepartmentMapper;
+import com.msj.server.pojo.Department;
+import com.msj.server.service.IDepartmentService;
 import org.springframework.stereotype.Service;
 
 /**

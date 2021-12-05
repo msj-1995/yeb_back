@@ -1,7 +1,7 @@
 package com.msj.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.msj.pojo.Salary;
+import com.msj.server.pojo.Salary;
 
 /**
  * <p>

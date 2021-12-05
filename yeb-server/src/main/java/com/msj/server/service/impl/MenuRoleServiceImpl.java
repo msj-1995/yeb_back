@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.MenuRole;
-import com.msj.mapper.MenuRoleMapper;
-import com.msj.service.IMenuRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.MenuRoleMapper;
+import com.msj.server.pojo.MenuRole;
+import com.msj.server.service.IMenuRoleService;
 import org.springframework.stereotype.Service;
 
 /**

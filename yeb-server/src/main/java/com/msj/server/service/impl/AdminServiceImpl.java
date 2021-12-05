@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.Admin;
-import com.msj.mapper.AdminMapper;
-import com.msj.service.IAdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.AdminMapper;
+import com.msj.server.pojo.Admin;
+import com.msj.server.service.IAdminService;
 import org.springframework.stereotype.Service;
 
 /**

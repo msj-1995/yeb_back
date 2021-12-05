@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.EmployeeRemove;
-import com.msj.mapper.EmployeeRemoveMapper;
-import com.msj.service.IEmployeeRemoveService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.EmployeeRemoveMapper;
+import com.msj.server.pojo.EmployeeRemove;
+import com.msj.server.service.IEmployeeRemoveService;
 import org.springframework.stereotype.Service;
 
 /**

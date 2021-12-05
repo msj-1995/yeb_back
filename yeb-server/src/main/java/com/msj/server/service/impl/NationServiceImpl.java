@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.Nation;
-import com.msj.mapper.NationMapper;
-import com.msj.service.INationService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.NationMapper;
+import com.msj.server.pojo.Nation;
+import com.msj.server.service.INationService;
 import org.springframework.stereotype.Service;
 
 /**

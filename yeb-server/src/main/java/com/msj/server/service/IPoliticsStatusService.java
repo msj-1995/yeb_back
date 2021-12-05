@@ -1,7 +1,7 @@
 package com.msj.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.msj.pojo.PoliticsStatus;
+import com.msj.server.pojo.PoliticsStatus;
 
 /**
  * <p>

@@ -1,8 +1,8 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.AdminRole;
-import com.msj.mapper.AdminRoleMapper;
-import com.msj.service.IAdminRoleService;
+import com.msj.server.pojo.AdminRole;
+import com.msj.server.mapper.AdminRoleMapper;
+import com.msj.server.service.IAdminRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.SalaryAdjust;
-import com.msj.mapper.SalaryAdjustMapper;
-import com.msj.service.ISalaryAdjustService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.SalaryAdjustMapper;
+import com.msj.server.pojo.SalaryAdjust;
+import com.msj.server.service.ISalaryAdjustService;
 import org.springframework.stereotype.Service;
 
 /**

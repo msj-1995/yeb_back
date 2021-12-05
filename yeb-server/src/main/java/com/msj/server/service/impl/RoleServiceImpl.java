@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.Role;
-import com.msj.mapper.RoleMapper;
-import com.msj.service.IRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.RoleMapper;
+import com.msj.server.pojo.Role;
+import com.msj.server.service.IRoleService;
 import org.springframework.stereotype.Service;
 
 /**

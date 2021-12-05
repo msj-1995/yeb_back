@@ -1,9 +1,9 @@
 package com.msj.server.service.impl;
 
-import com.msj.pojo.Appraise;
-import com.msj.mapper.AppraiseMapper;
-import com.msj.service.IAppraiseService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.msj.server.mapper.AppraiseMapper;
+import com.msj.server.pojo.Appraise;
+import com.msj.server.service.IAppraiseService;
 import org.springframework.stereotype.Service;
 
 /**
