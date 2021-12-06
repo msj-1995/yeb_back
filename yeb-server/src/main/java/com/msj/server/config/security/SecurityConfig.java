@@ -53,7 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
-                // 缓存也用不到
+                // 缓存也用不到:禁用缓存
                 .headers()
                 .cacheControl();
         // 添加jwt登录授权拦截器
