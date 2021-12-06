@@ -35,7 +35,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("云e办接口文档")
                 .description("云e办接口文档")
-                .contact(new Contact("msj", "http://localhost:8001/doc.html","xxxx@xxx.com")
+                .contact(new Contact("msj", "http://localhost:8001/doc.html","xxxx@xxx.com"))
                 .version("1.0")
                 .build();
     }
