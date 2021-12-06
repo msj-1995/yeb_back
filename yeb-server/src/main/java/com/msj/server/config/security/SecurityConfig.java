@@ -21,6 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private IAdminService adminService;
+    @Autowired
 
     // 我们重写了UserDetails，重写下面的方法可以让使用security登录的时候走我们是实现的UserDetails
     @Override
