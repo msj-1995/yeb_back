@@ -3,7 +3,7 @@
 <mapper namespace="com.msj.server.mapper.DepartmentMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.msj.pojo.Department">
+    <resultMap id="BaseResultMap" type="com.msj.server.pojo.Department">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="parentId" property="parentId" />

@@ -3,7 +3,7 @@
 <mapper namespace="com.msj.server.mapper.MailLogMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.msj.pojo.MailLog">
+    <resultMap id="BaseResultMap" type="com.msj.server.pojo.MailLog">
         <id column="msgId" property="msgId" />
         <result column="eid" property="eid" />
         <result column="status" property="status" />
