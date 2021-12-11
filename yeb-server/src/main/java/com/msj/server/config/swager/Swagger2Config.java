@@ -32,8 +32,8 @@ public class Swagger2Config {
                 // 配置扫描任何路径
                 .paths(PathSelectors.any())
                 .build()
-                .securityContexts()
-                .securitySchemes();
+                .securityContexts(securityContexts())
+                .securitySchemes(securitySchemes());
     }
 
     private ApiInfo apiInfo() {
@@ -45,9 +45,9 @@ public class Swagger2Config {
                 .build();
     }
 
-    private List<ApiKey> securitySchemes() {
+    private List<SecurityScheme> securitySchemes() {
         // 设置请求头信息
-        List<ApiKey> result = new ArrayList<>();
+        List<SecurityScheme> result = new ArrayList<>();
         ApiKey apiKey = new ApiKey("Authorization", "Authorization", "Header");
         result.add(apiKey);
         return result;
@@ -61,7 +61,8 @@ public class Swagger2Config {
     }
 
     private SecurityContext getContextByBean(String pathRegex) {
-        return SecurityContext.builder(defaultAuth())
+        return SecurityContext.builder()
+                .securityReferences(defaultAuth())
                 .forPaths(PathSelectors.regex(pathRegex))
                 .build();
     }
