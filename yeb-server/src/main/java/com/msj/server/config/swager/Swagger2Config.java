@@ -12,6 +12,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,5 +46,13 @@ public class Swagger2Config {
                 .build();
     }
 
-    private List<ApiKey>
+    private List<ApiKey> securitySchemes() {
+        // 设置请求头信息
+        List<ApiKey> result = new ArrayList<>();
+        ApiKey apiKey = new ApiKey("Authorization", "Authorization", "Header");
+        result.add(apiKey);
+        return result;
+    }
+
+
 }
