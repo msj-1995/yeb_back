@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -33,6 +34,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
     }
 
+    // 放行一些路径，这些路径是不走拦截链的
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        /**
+         * doc.html是swagger的路径,只放行这个是不够的，还需要放行/swagger-resources/**,还有v2/api-docs/**也是
+         */
+        web.ignoring().antMatchers(
+                "/login",
+                "/css/**",
+                "/js/**",
+                "/index.html",
+                "/favicon.ico",
+                "/doc.html",
+                "/webjars/**",
+                "/swagger-resources/**",
+                "/v2/api-docs/**"
+        );
+        super.configure(web);
+    }
     // spring-security的完整配置
 
 
