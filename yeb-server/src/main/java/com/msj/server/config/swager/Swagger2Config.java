@@ -63,7 +63,8 @@ public class Swagger2Config {
     }
 
     private SecurityContext getContextByBean(String pathRegex) {
-        return SecurityContext.builder()
-
+        return SecurityContext.builder(defaultAuth())
+                .forPaths(PathSelectors.regex(pathRegex))
+                .build();
     }
 }
