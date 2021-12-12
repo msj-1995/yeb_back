@@ -66,9 +66,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 使用add继续配置
                 .and()
                 .authorizeRequests()
-                // 允许登录访问
-                .antMatchers("/login", "/logout")
-                .permitAll()
+                // 允许登录访问:上面的config已经配置了，所以这里可以删了
+                //.antMatchers("/login", "/logout")
+                //.permitAll()
                 // 除了上面的，其他的需要拦截(拦截认证）
                 .anyRequest()
                 .authenticated()
