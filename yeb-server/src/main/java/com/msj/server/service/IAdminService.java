@@ -3,7 +3,8 @@ package com.msj.server.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.msj.server.pojo.Admin;
 import com.msj.server.pojo.RespBean;
-import org.springframework.http.HttpRequest;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ public interface IAdminService extends IService<Admin> {
      * @param request
      * @return
      */
-    RespBean login(String username, String password, HttpRequest request);
+    RespBean login(String username, String password, HttpServletRequest request);
 
     /**
      * 根据用户名获取用户信息
