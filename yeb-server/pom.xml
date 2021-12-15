@@ -76,6 +76,12 @@
       <artifactId>jjwt</artifactId>
       <version>0.9.0</version>
     </dependency>
+    <!-- 添加谷歌验证码功能 -->
+    <dependency>
+      <groupId>com.github.axet</groupId>
+      <artifactId>kaptcha</artifactId>
+      <version>0.0.9</version>
+    </dependency>
   </dependencies>
 
   <build>
