@@ -1,6 +1,7 @@
 package com.msj.server.config.kaptcha;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
+import com.google.code.kaptcha.util.Config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -36,5 +37,15 @@ public class KaptchaConfig {
         // 字符长度，默认为5
         properties.setProperty("kaptcha.textproducer.char.length", "4");
         // 字符边距，默认2
+        properties.setProperty("kaptcha.textproducer.char.space", "4");
+        // 验证码图片宽度 默认200
+        properties.setProperty("kaptcha.image.width", "100");
+        // 验证码图片高度，默认40
+        properties.setProperty("kaptcha.image.height", "40");
+        // 把设置的配置放到kaptcha的配置中
+        Config config = new Config(properties);
+        // 把配置放到kaptcha中
+        defaultKaptcha.setConfig(config);
+        return defaultKaptcha;
     }
 }
