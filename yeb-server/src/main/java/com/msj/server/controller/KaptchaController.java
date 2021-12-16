@@ -11,6 +11,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 验证码接口:用户去登录的时候就要获取验证码，所以security中也要放行/kaptcha
@@ -22,7 +24,7 @@ public class KaptchaController {
     private DefaultKaptcha defaultKaptcha;
 
     @ApiOperation(value="验证码")
-    @GetMapping(value = "/kaptcha")
+    @GetMapping(value = "/kaptcha", produces = "image/jpeg")
     public void kaptcha(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         // 定义response输出类型为image/jpeg类型
         httpServletResponse.setDateHeader("Expires", 0);
