@@ -1,6 +1,7 @@
 package com.msj.server.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -9,6 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -56,6 +58,12 @@ public class Menu implements Serializable {
 
     @ApiModelProperty(value = "是否启用")
     private Boolean enabled;
+
+    // 添加子菜单字段
+    @ApiModelProperty(value = "子菜单")
+    // mybatis-plus注解，exist=false表面这是实体类中的属性，数据库表中没有该字段，否则去查数据库的时候会报错
+    @TableField(exist = false)
+    private List<Menu> children;
 
 
 }
