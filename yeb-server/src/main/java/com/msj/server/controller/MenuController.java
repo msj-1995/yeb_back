@@ -30,6 +30,10 @@ public class MenuController {
     @ApiModelProperty(value = "通过id查询菜单列表")
     @GetMapping("/menu")
     public List<Menu> getMenuByAdminId() {
-
+        /**
+         * 这里的通过用户id查寻菜单列表中的id我们选择从后台获取，如果从前端传过来的话，存在篡改的可能
+         * 我们使用了Security,每个登录的对象都有一个全局对象，我们可以从这个全局对象中获取用户的id
+         */
+        return adminService.getMenuByAdminId();
     }
 }
