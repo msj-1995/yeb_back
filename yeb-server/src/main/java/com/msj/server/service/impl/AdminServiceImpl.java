@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.msj.server.config.security.JwtTokenUtil;
 import com.msj.server.mapper.AdminMapper;
 import com.msj.server.pojo.Admin;
+import com.msj.server.pojo.Menu;
 import com.msj.server.pojo.RespBean;
 import com.msj.server.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -88,5 +90,15 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Override
     public Admin getAdminByUserName(String username) {
         return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username", username).eq("enabled", true));
+    }
+
+    /**
+     * 根据用户id查询菜单列表
+     */
+    @Override
+    public List<Menu> getMenuByAdminId() {
+        // 这里我们通过security的全局上下文获取用户id
+        // 这里的getPrincipal是一个Principal,本质就是一个Admin,所以我们可以根据Admin中的getId()方法获得用户的id
+        return adminMapper.getMenuByAdminId(((Admin)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
     }
 }
