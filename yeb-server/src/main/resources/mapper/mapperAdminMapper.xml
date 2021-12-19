@@ -20,36 +20,5 @@
     <sql id="Base_Column_List">
         id, name, phone, telephone, address, enabled, username, password, userFace, remark
     </sql>
-    
-    <resultMap id="Menus" type="com.msj.server.pojo.Menu" extends="BaseResultMap"></resultMap>
-
-    <!-- 现在Menu中多了一个children,没有与数据库一一对应，所以我们没有使用实体类对应，自己使用resultMap来对应 -->
-    <select id="getMenuByAdminId" resultMap="Menus">
-        select DISTINCT
-            m1.*,
-            m2.id as Id2,
-            m2.url as url2,
-            m2.path as path2,
-            m2.component as component2,
-            m2.`name` as name2,
-            m2.iconCls as iconCls2,
-            m2.keepAlive as keepAlive2,
-            m2.requireAuth as requireAuth2,
-            m2.parentId as parentId,
-            m2.enabled as enabled2
-        from
-            t_menu m1,
-            t_menu m2,
-            t_admin_role ar,
-            t_menu_role mr
-        where m1.id = m2.parentId
-          and
-            m2.id = mr.mid
-          and
-            mr.rid = ar.rid
-          and
-            ar.adminId = #{id}
-          and m2.enabled = TRUE
-    </select>
 
 </mapper>
