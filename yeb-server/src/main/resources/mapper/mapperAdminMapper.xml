@@ -20,6 +20,8 @@
     <sql id="Base_Column_List">
         id, name, phone, telephone, address, enabled, username, password, userFace, remark
     </sql>
+    
+    <resultMap id="Menus" type="com.msj.server.pojo.Menu" extends="BaseResultMap"></resultMap>
 
     <!-- 现在Menu中多了一个children,没有与数据库一一对应，所以我们没有使用实体类对应，自己使用resultMap来对应 -->
     <select id="getMenuByAdminId" resultMap="Menus">
